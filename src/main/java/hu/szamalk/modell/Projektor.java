@@ -5,14 +5,16 @@ import java.util.*;
 
 public class Projektor {
 
-    private static char[] nev = new char[]{'C', 's', 'o', 'l', 't', 'i', 'P', 'e', 't', 'i'};
-    private static char[] abc = new char[]{'a', 'A', 'b', 'B', 'c', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L'};
-    private static Random rnd = new Random();
+    private static final char[] nev = new char[]{'C', 's', 'o', 'l', 't', 'i', 'P', 'e', 't', 'i'};
+    private static final char[] abc = new char[]{'a', 'A', 'b', 'B', 'c', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P'};
+    private static final Random rnd = new Random();
 
-    private List<Character> veletlenBetuk;
+    private final List<Character> veletlenBetuk;
+    TreeSet<Character> felhBetuk;
 
     public Projektor() {
         this.veletlenBetuk = veletlenBetukFeltolt();
+        this.felhBetuk = new TreeSet<>(this.veletlenBetuk);
     }
 
     private List<Character> veletlenBetukFeltolt() {
@@ -54,8 +56,24 @@ public class Projektor {
     }
 
     public Set<Object> felhasznaltBetuk() {
-        TreeSet<Character> felhBetuk = new TreeSet<>(this.veletlenBetuk);
-
         return Collections.unmodifiableSet(felhBetuk);
+    }
+
+    public Map<Character, Integer> betukMennyisege() {
+        TreeMap<Character, Integer> betuMennyisegek = new TreeMap<>();
+
+        for (char aktBetu : veletlenBetuk) {
+            if (!betuMennyisegek.containsKey(aktBetu)) {
+                betuMennyisegek.put(aktBetu, 1);
+            } else {
+                int db = betuMennyisegek.get(aktBetu);
+                db++;
+                betuMennyisegek.remove(aktBetu);
+                betuMennyisegek.put(aktBetu, db);
+            }
+        }
+
+
+        return Collections.unmodifiableMap(betuMennyisegek);
     }
 }

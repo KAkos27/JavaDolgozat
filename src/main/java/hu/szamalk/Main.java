@@ -46,6 +46,7 @@ public class Main {
         System.out.println(projektor.nevVesszovelElvalasztva());
         System.out.println(projektor.veletlenVesszovelElvalasztva());
 
-        System.out.print("Felhasznált betűk: " + projektor.felhasznaltBetuk());
+        System.out.println("Felhasznált betűk: " + projektor.felhasznaltBetuk());
+        System.out.println("Betűk mennyisége (kis és nagybetűk külön): \n" + projektor.betukMennyisege());
     }
 }
