@@ -45,5 +45,7 @@ public class Main {
         System.out.println("Név és 10 betű:");
         System.out.println(projektor.nevVesszovelElvalasztva());
         System.out.println(projektor.veletlenVesszovelElvalasztva());
+
+        System.out.print("Felhasznált betűk: " + projektor.felhasznaltBetuk());
     }
 }

@@ -1,7 +1,7 @@
 package hu.szamalk.modell;
 
 
-import java.util.Random;
+import java.util.*;
 
 public class Projektor {
 
@@ -9,18 +9,18 @@ public class Projektor {
     private static char[] abc = new char[]{'a', 'A', 'b', 'B', 'c', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L'};
     private static Random rnd = new Random();
 
-    private char[] veletlenBetuk;
+    private List<Character> veletlenBetuk;
 
     public Projektor() {
         this.veletlenBetuk = veletlenBetukFeltolt();
     }
 
-    private char[] veletlenBetukFeltolt() {
-        char[] veletlen = new char[10];
+    private List<Character> veletlenBetukFeltolt() {
+        List<Character> veletlen = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
             int szam = rnd.nextInt(abc.length);
-            veletlen[i] = abc[szam];
+            veletlen.add(abc[szam]);
         }
 
         return veletlen;
@@ -44,14 +44,18 @@ public class Projektor {
 
         for (int i = 0; i < 10; i++) {
             if (i != 9) {
-                ki += veletlenBetuk[i] + ", ";
+                ki += veletlenBetuk.get(i) + ", ";
             } else {
-                ki += veletlenBetuk[i];
+                ki += veletlenBetuk.get(i);
             }
         }
 
         return ki;
     }
 
+    public Set<Object> felhasznaltBetuk() {
+        TreeSet<Character> felhBetuk = new TreeSet<>(this.veletlenBetuk);
 
+        return Collections.unmodifiableSet(felhBetuk);
+    }
 }
