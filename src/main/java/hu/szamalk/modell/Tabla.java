@@ -16,14 +16,16 @@ public class Tabla {
         }
     }
 
-    public void megjelenit() {
+    public String megjelenit() {
+        String ki = "";
         for (int sor = 0; sor < this.t.length; sor++) {
             for (int oszlop = 0; oszlop < t.length; oszlop++) {
-                System.out.print(t[sor][oszlop]);
+                ki += t[sor][oszlop];
             }
-            System.out.println();
+            ki += "\n";
         }
-        System.out.println();
+
+        return ki;
     }
 
     public void elhelyez(int n) {
