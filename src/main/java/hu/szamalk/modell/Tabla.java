@@ -62,20 +62,20 @@ public class Tabla {
         return !vanKiralyno;
     }
 
-    public void uresOszlopokSzama(){
+    public void uresOszlopokSzama() {
         int uresOszlopSzam = 0;
-        for (int o = 0; o < this.t.length ; o++) {
-            if (this.uresOszlop(0)){
+        for (int o = 0; o < this.t.length; o++) {
+            if (this.uresOszlop(o)) {
                 uresOszlopSzam++;
             }
         }
         System.out.println("Oszlopok: " + uresOszlopSzam);
     }
 
-    public void uresSorokSzama(){
+    public void uresSorokSzama() {
         int uresSorSzam = 0;
-        for (int s = 0; s < this.t.length ; s++) {
-            if (this.uresSor(0)){
+        for (int s = 0; s < this.t.length; s++) {
+            if (this.uresSor(s)) {
                 uresSorSzam++;
             }
         }
