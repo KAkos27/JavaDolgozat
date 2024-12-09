@@ -13,5 +13,6 @@ public class Main {
         tabla.elhelyez(8);
 
         tabla.megjelenit();
+
     }
 }

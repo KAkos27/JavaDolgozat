@@ -37,4 +37,28 @@ public class Tabla {
             }
         }
     }
+
+    public boolean uresOszlop(int o) {
+        boolean vanKiralyno = false;
+
+        for (int s = 0; s < this.t.length; s++) {
+            if (this.t[s][o] == 'K') {
+                vanKiralyno = true;
+            }
+        }
+
+        return !vanKiralyno;
+    }
+
+    public boolean uresSor(int s) {
+        boolean vanKiralyno = false;
+
+        for (int o = 0; o < this.t.length; o++) {
+            if (this.t[s][o] == 'K') {
+                vanKiralyno = true;
+            }
+        }
+
+        return !vanKiralyno;
+    }
 }
