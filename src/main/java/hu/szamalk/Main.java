@@ -9,5 +9,9 @@ public class Main {
         Tabla tabla = new Tabla('#');
 
         tabla.megjelenit();
+
+        tabla.elhelyez(8);
+
+        tabla.megjelenit();
     }
 }
