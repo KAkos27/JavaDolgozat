@@ -2,17 +2,26 @@ package hu.szamalk.modell;
 
 public class Tabla {
 
-    private char[][] T;
+    private char[][] t;
     private char uresCella;
 
     public Tabla(char uresCella) {
-        T = new char[8][8];
+        t = new char[8][8];
         this.uresCella = uresCella;
 
-        for (int sor = 0; sor < T.length ; sor++) {
-            for (int oszlop = 0; oszlop < T.length; oszlop++) {
-                T[sor][oszlop] = this.uresCella;
+        for (int sor = 0; sor < t.length; sor++) {
+            for (int oszlop = 0; oszlop < t.length; oszlop++) {
+                t[sor][oszlop] = this.uresCella;
             }
+        }
+    }
+
+    public void megjelenit() {
+        for (int sor = 0; sor < t.length; sor++) {
+            for (int oszlop = 0; oszlop < t.length; oszlop++) {
+                System.out.print(t[sor][oszlop]);
+            }
+            System.out.println();
         }
     }
 }
