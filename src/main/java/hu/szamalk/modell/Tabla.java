@@ -24,4 +24,16 @@ public class Tabla {
             System.out.println();
         }
     }
+
+    public void elhelyez(int n) {
+        int i = 0;
+        while (i < n) {
+            int s = (int) (Math.random() * 9);
+            int o = (int) (Math.random() * 9);
+            if (this.t[s][o] != 'K') {
+                this.t[s][o] = 'K';
+                i++;
+            }
+        }
+    }
 }
