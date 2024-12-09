@@ -6,7 +6,7 @@ import java.util.*;
 public class Projektor {
 
     private static final char[] nev = new char[]{'C', 's', 'o', 'l', 't', 'i', 'P', 'e', 't', 'i'};
-    private static final char[] abc = new char[]{'a', 'A', 'b', 'B', 'c', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P'};
+    private char[] abc = new char[]{'a', 'A', 'b', 'B', 'c', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P'};
     private static final Random rnd = new Random();
 
     private final List<Character> veletlenBetuk;
