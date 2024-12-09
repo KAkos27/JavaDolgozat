@@ -26,4 +26,32 @@ public class Projektor {
         return veletlen;
     }
 
+    public String nevVesszovelElvalasztva() {
+        String ki = "";
+        for (int i = 0; i < 10; i++) {
+            if (i != 9) {
+                ki += nev[i] + ", ";
+            } else {
+                ki += nev[i];
+            }
+        }
+
+        return ki;
+    }
+
+    public String veletlenVesszovelElvalasztva() {
+        String ki = "";
+
+        for (int i = 0; i < 10; i++) {
+            if (i != 9) {
+                ki += veletlenBetuk[i] + ", ";
+            } else {
+                ki += veletlenBetuk[i];
+            }
+        }
+
+        return ki;
+    }
+
+
 }
